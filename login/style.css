@@ -1,4 +1,20 @@
 /* Settings */
+
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-blue: #2567e8;
+  --color-facebook-blue: #2788d3;
+  --color-light-blue: #5caae0;
+  --color-green: #18b613;
+  --color-yellow: #eebf3c;
+  --color-gray: #858585;
+  --color-dark-gray: #686868;
+  --color-light-gray: #bbbabb;
+  --color-black: #0c0c0c;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,11 +26,30 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: var(--color-gray);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-black);
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--color-black);
+  margin: 20px 0;
+}
+
 button {
   background-color: transparent;
-  padding: 0;
-  border: none;
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 /* login-box */
@@ -68,10 +103,223 @@ button {
   left: 30px;
 }
 
-/* 모달창 */
+/* 모달창 열기 닫기 */
 #login-modal {
-  display: block;
+  display: inline-block;
 }
 #login-modal.invisible {
   display: none;
+}
+
+#login-modal {
+  background-color: var(--color-white);
+  height: 100vh;
+}
+
+/* 로그인 모달창 */
+.inner {
+  width: 520px;
+  height: 712px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Header */
+.header {
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.header__title {
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+}
+
+.header__close {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Login */
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__description {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 26px 24px 0 24px;
+}
+
+input.login__id,
+input.login__pw {
+  height: 50px;
+  margin: 0 24px;
+  padding: 15px 16px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+}
+input.login__id {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.login__check-btn {
+  position: relative;
+  margin: 17px 24px 21px 24px;
+}
+
+.login__check-txt {
+  color: #767676;
+  font-weight: 500;
+  padding-left: 32px;
+  cursor: pointer;
+}
+
+#login__check-empty-img,
+#login__check-img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) scale(1.1);
+  cursor: pointer;
+}
+#login__check-img.invisible {
+  display: none;
+}
+
+button.login__btn {
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  background-color: var(--color-blue);
+  border-radius: 6px;
+  width: 472px;
+  height: 50px;
+  margin: 0 24px;
+  opacity: 0.9;
+}
+
+button.login__btn:hover {
+  opacity: 1;
+}
+
+.login__join {
+  color: var(--color-gray);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login__join-membership {
+  padding-right: 8px;
+  cursor: pointer;
+}
+.login__join-findpw {
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+.or-text {
+  display: block;
+  position: relative;
+  text-align: center;
+  color: var(--color-gray);
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+span.or-text:before {
+  content: '';
+  position: absolute;
+  margin-left: 30px;
+  top: 50%;
+  left: 0;
+  background-color: var(--color-light-gray);
+  width: 40%;
+  height: 1px;
+}
+
+.or-text:after {
+  content: '';
+  position: absolute;
+  margin-right: 30px;
+  top: 50%;
+  right: 0;
+  background-color: var(--color-light-gray);
+  width: 40%;
+  height: 1px;
+}
+
+/* Social Login */
+.social-login {
+  display: flex;
+  flex-direction: column;
+}
+
+a.btn {
+  position: relative;
+  text-align: center;
+  width: 472px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #767676;
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin-right: 24px;
+  margin-left: 24px;
+  margin-bottom: 5px;
+  opacity: 1;
+}
+
+a.btn-facebook,
+a.btn-naver,
+a.btn-kakao {
+  margin-top: 5px;
+}
+
+a.btn-kakao {
+  margin-bottom: 25px;
+}
+
+a.btn:hover {
+  opacity: 0.8;
+}
+
+img.social-login__img {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%) scale(1.2);
+}
+
+a.btn-facebook {
+  border: 1px solid #2d9cd8;
+}
+
+a.btn-naver {
+  border: 1px solid #00bf18;
+}
+
+a.btn-kakao {
+  border: 1px solid #f2c94c;
 }
