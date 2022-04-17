@@ -119,7 +119,7 @@ button {
 /* 로그인 모달창 */
 .inner {
   width: 520px;
-  height: 712px;
+  height: 736px;
   background-color: var(--color-white);
   border: 1px solid var(--color-light-gray);
   border-radius: 12px;
@@ -163,24 +163,24 @@ button {
   margin: 26px 24px 0 24px;
 }
 
-input.login__id,
-input.login__pw {
+.login__id,
+.login__pw {
   height: 50px;
   margin: 0 24px;
+  margin-bottom: 10px;
   padding: 15px 16px;
   border: 1px solid #c4c4c4;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 400;
 }
-input.login__id {
+.login__id {
   margin-top: 24px;
-  margin-bottom: 10px;
 }
 
 .login__check-btn {
   position: relative;
-  margin: 17px 24px 21px 24px;
+  margin: 7px 24px 21px 24px;
 }
 
 .login__check-txt {
@@ -322,4 +322,19 @@ a.btn-naver {
 
 a.btn-kakao {
   border: 1px solid #f2c94c;
+}
+
+/* 로그인 기능구현 - 메시지 */
+.login__id-msg,
+.login__pw-msg {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f4492e;
+  margin: 0 0 10px 28px;
+}
+
+.login__id-msg.invisible,
+.login__pw-msg.invisible {
+  display: none;
 }
