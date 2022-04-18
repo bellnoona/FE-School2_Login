@@ -46,6 +46,8 @@ loginBtn.addEventListener('click', () => {
       loginPwMsg.classList.remove('invisible');
     } else if (loginIdBox.value === id && loginPwBox.value === password) {
       loginPwMsg.classList.add('invisible');
+    } else {
+      return;
     }
   }
 });
