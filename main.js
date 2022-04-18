@@ -36,7 +36,7 @@ const id = 'bellnoona';
 const password = 'bell1234';
 
 loginBtn.addEventListener('click', () => {
-  if (!!!loginIdBox.value) {
+  if (!loginIdBox.value) {
     loginIdMsg.classList.remove('invisible');
   } else {
     loginIdMsg.classList.add('invisible');
